@@ -47,7 +47,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                       <li class="menu-item-has-children dropdown">
                           <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Joueur</a>
                           <ul class="sub-menu children dropdown-menu">
-                              <li><i class="fa fa-bars"></i><a href="<?php echo site_url('Player'); ?>">Liste des joueurs</a></li>
+                              <li><i class="fa fa-bars"></i><a href="<?php echo site_url('Player'); ?>">Liste des potos</a></li>
                               <li><i class="fa fa-bars"></i><a href="<?php echo site_url('Player/create_link'); ?>">Creer joueur</a></li>
                           </ul>
                       </li>
