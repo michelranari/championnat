@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => '127.0.0.1',
-	'username' => 'postgres',
-	'password' => 'michel974',
-	'database' => 'championnat',
+	'hostname' => 'ec2-54-235-252-23.compute-1.amazonaws.com',
+	'username' => 'fcvxgzsaxdmvwl',
+	'password' => 'ae0f32dca6a1299d61913772365de1dbdb3a00c67a5710412099587b3ef3433f',
+	'database' => 'dduoouav26l4nc',
 	'dbdriver' => 'postgre',
 	'dbprefix' => '',
 	'pconnect' => TRUE,
