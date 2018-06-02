@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'https://dry-depths-84253.herokuapp.com';
+$config['base_url'] = 'https://dry-depths-84253.herokuapp.com/';
 
 /*
 |--------------------------------------------------------------------------
@@ -324,7 +324,7 @@ $config['cache_query_string'] = FALSE;
 | https://codeigniter.com/user_guide/libraries/encryption.html
 |
 */
-$config['encryption_key'] = '';
+$config['encryption_key'] = 'MnbPj0w5oDUGkkdkjz5nhg2sZMG3d5BL';
 
 /*
 |--------------------------------------------------------------------------

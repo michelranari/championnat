@@ -15,8 +15,20 @@ class Match_model extends CI_Model{
 
   public function nbMatch(){
     $this->load->database();
-    return $this->db->select('count(*)')
+    return $this->db->select('count(*) as nb_match')
                     ->from('match')
+                    ->get()
+                    ->result();
+  }
+
+  public function calendar(){
+    $this->load->database();
+    return $this->db->select('id_match,joue,j.id_journee,date_match,libelle,e1.nom_equipe as equipe1, e2.nom_equipe as equipe2,score1,score2')
+                    ->from('match m')
+                    ->join('equipe e1', "m.id_equipe = e1.id_equipe")
+                    ->join('journee j', "j.id_journee = m.id_journee")
+                    ->join('equipe e2', "m.id_equipe_deplacer = e2.id_equipe")
+                    ->order_by("id_journee", "asc")
                     ->get()
                     ->result();
   }
@@ -63,6 +75,8 @@ class Match_model extends CI_Model{
                       ->set('id_equipe', $data['id_equipe'])
                       ->set('id_equipe_deplacer', $data['id_equipe_deplacer'])
                       ->set('joue', false)
+                      ->set('score1', 0)
+                      ->set('score2', 0)
                       ->insert($this->table);
     }
 
