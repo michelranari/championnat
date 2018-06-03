@@ -31,6 +31,7 @@ class Player_model extends CI_Model{
                   ->result();
   }
 
+
   public function getLastPlayerId() {
     $this->load->database();
     return $this->db->select('id_joueur')

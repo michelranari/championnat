@@ -9,7 +9,7 @@
                       <div class="card-body card-block">
                         <form action="<?php echo site_url("Team/$action") ?>" method="post" class="form-horizontal">
 
-                          <input name="id_equipe" type="hidden" <?php echo "value = \"" .  $equipe[0]->id_equipe . "\""?>>
+                          <input name="id_equipe" type="hidden" <?php if (isset($joueur))echo "value = \"" .  $equipe[0]->id_equipe . "\""?>>
 
                           <div class="form-group">
                             <label class=" form-control-label">Nom de l'équipe</label>

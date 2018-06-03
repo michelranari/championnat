@@ -25,7 +25,7 @@
                 <div class="row">
 
                   <div class="row form-group">
-                    <form action="<?php echo site_url("Day/create_day") ?>" method="post" class="form-horizontal">
+                    <form action="" method="post" class="form-horizontal">
                       <div class="col col-md-3"><label for="select" class=" form-control-label"> Modifier journée N° :</label></div>
                       <div class="col-12 col-md-6">
                         <select  name= "modif_day" class="standardSelect" tabindex="1">

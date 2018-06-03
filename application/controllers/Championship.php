@@ -25,5 +25,12 @@ class Championship extends CI_Controller {
     header('location:  ' . site_url("Day"));
   }
 
+	public function ranking(){
+		$data['equipe'] = $this->team_model->getRanking();
+		$this->load->view('layout/header');
+		$this->load->view('championship/ranking', $data);
+		$this->load->view('layout/footer');
+	}
+
 
 }

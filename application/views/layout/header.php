@@ -55,9 +55,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                           <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Championnat</a>
                           <ul class="sub-menu children dropdown-menu">
                               <li><i class="fa fa-bars"></i><a href="<?php echo site_url('Championship'); ?>">Calendrier</a></li>
-                          </ul>
-                          <ul class="sub-menu children dropdown-menu">
-                              <li><i class="fa fa-bars"></i><a href="<?php echo site_url('Championship'); ?>">Classement</a></li>
+                              <li><i class="fa fa-bars"></i><a href="<?php echo site_url('Championship/ranking'); ?>">Classement</a></li>
                           </ul>
                       </li>
                       <li class="menu-item-has-children dropdown">
@@ -99,6 +97,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </a>
                         <div class="user-menu dropdown-menu">
                                 <a class="nav-link" href="<?php echo site_url('Connexion/disconnect'); ?>"><i class="fa fa-power -off"></i>Logout</a>
+                                <a class="nav-link" href="<?php echo site_url('Connexion/create_user_link'); ?>"><i class="fa fa-power -off"></i>Ajouter membre</a>
                         </div>
                         <div class="user-menu dropdown-menu">
                                 <a class="nav-link" href="<?php echo site_url('Connexion/create_user_link'); ?>"><i class="fa fa-power -off"></i>Ajouter membre</a>

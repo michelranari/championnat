@@ -17,7 +17,7 @@ class Referee_model extends CI_Model{
     $this->load->database();
     return $this->db->select('arbitrer.id_arbitre,role_arbitre,nom_arbitre,prenom_arbitre')
                     ->from('arbitrer')
-                    ->join('arbitre', "arbitre.id_arbitre = arbitre.id_arbitre")
+                    ->join('arbitre', "arbitre.id_arbitre = arbitrer.id_arbitre")
                     ->where('id_match', $id_match)
                     ->get()
                     ->result();
@@ -28,9 +28,22 @@ class Referee_model extends CI_Model{
 
     }
 
-    public function update($id, $data){
+    public function update_arbitrer($id, $data){
       $this->load->database();
+      $this->db->set('id_arbitre', $data['id_arbitre_centre'])
+                ->set('role_arbitre', 'arbitre centrale')
+                ->where('id_match',$id)
+                ->update('arbitrer');
 
+      $this->db->set('id_arbitre', $data['id_arbitre_touche_1'])
+                ->set('role_arbitre', 'arbitre de touche')
+                ->where('id_match',$id)
+                ->update('arbitrer');
+
+      $this->db->set('id_arbitre', $data['id_arbitre_touche_2'])
+                ->set('role_arbitre', 'arbitre de touche')
+                ->where('id_match',$id)
+                ->update('arbitrer');
     }
 
     public function insert_arbitrer($data){
@@ -49,6 +62,12 @@ class Referee_model extends CI_Model{
                 ->set('id_arbitre', $data['id_arbitre_touche_2'])
                 ->set('role_arbitre', 'arbitre de touche')
                 ->insert('arbitrer');
+    }
+
+    public function delete_arbitrer_by_match($id_match){
+      $this->load->database();
+      return $this->db->where('id_match',$id_match)
+                      ->delete('arbitrer');
     }
 
     public function delete($id){

@@ -6,6 +6,16 @@ class Team extends CI_Controller {
 
 	public function index()
 	{
+		if (isset($_COOKIE['login']) && $this->user_model->checkCookieUser($_COOKIE['login'])) {
+			$data['all_match'] = $this->match_model->calendar();
+	    $data['nb_match'] =  $this->match_model->nbMatch();
+			$this->load->view('layout/header');
+	    $this->load->view('championship/calendar', $data);
+			$this->load->view('layout/footer');
+    }
+    else{
+        $this->load->view('connexion/connexion');
+    }
 	}
 
 	public function team_card($id){
@@ -67,6 +77,7 @@ class Team extends CI_Controller {
         $this->load->view('connexion/connexion');
     }
   }
+
 
 	public function edit_team() {
 		if (isset($_COOKIE['login']) && $this->user_model->checkCookieUser($_COOKIE['login'])) {

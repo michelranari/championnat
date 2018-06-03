@@ -52,10 +52,6 @@ class Match_model extends CI_Model{
                     ->result();
   }
 
-  public function selectIdMatch($id) {
-
-  }
-
   public function countGoalTeam($id){
     $this->load->database();
     return $this->db->select('count(*) as but')
@@ -81,7 +77,16 @@ class Match_model extends CI_Model{
     }
 
     public function update($id, $data){
-
+      $this->load->database();
+      return $this->db->set('date_match', $data['date_match'])
+                      ->set('id_journee', $data['id_journee'])
+                      ->set('id_equipe', $data['id_equipe'])
+                      ->set('id_equipe_deplacer', $data['id_equipe_deplacer'])
+                      ->set('joue', $data['joue'])
+                      ->set('score1', $data['score1'])
+                      ->set('score2', $data['score2'])
+                      ->where('id_match', (int)$id)
+                      ->update($this->table);
     }
 
     public function delete($id){

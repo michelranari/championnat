@@ -34,10 +34,6 @@
                                   <br>différence de buts : <?php echo $equipe[0]->difference_but?>
                                 </div>
                               </div>
-                              <hr>
-                              <div class="card-text text-sm-center">
-
-                              </div>
                           </div>
                       </div>
                   </div>

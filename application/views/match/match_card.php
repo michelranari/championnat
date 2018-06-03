@@ -32,7 +32,7 @@
                         <div class="row">
                           <div class="col-lg-12 text-lg-center">
                             <h1 class="text-center">
-                              <?php if (!($match[0]->joue)){  echo $all_match[0]->score1 . " - " . $match[0]->score2;
+                              <?php if (strcmp($match[0]->joue, "t") == 0){  echo $match[0]->score1 . " - " . $match[0]->score2;
                               } else {
                                 echo " - ";
                               }?>

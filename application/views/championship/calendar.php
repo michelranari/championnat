@@ -34,7 +34,7 @@
 
                                           <div class="col-lg-4">
                                             <h1 class="text-center">
-                                              <?php if (!($all_match[$j]->joue)){  echo $all_match[$j]->score1 . " - " . $all_match[$j]->score2;
+                                              <?php if (strcmp($all_match[$j]->joue, "t") == 0){  echo $all_match[$j]->score1 . " - " . $all_match[$j]->score2;
                                               } else {
                                                 echo " - ";
                                               }?>

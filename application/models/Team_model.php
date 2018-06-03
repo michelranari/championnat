@@ -32,9 +32,18 @@ class Team_model extends CI_Model{
   }
 
   public function selectAllPlayer($id_equipe){
+    $this->load->database();
+    return $this->db->select('*')
+                    ->from('joueur')
+                    ->where('id_equipe', $id_equipe)
+                    ->get()
+                    ->result();
+  }
+
+  public function selectAllbyTeam($id_equipe){
       $this->load->database();
       return $this->db->select('*')
-                    ->from('joueur')
+                    ->from('equipe')
                     ->where('id_equipe', $id_equipe)
                     ->get()
                     ->result();
@@ -48,6 +57,15 @@ class Team_model extends CI_Model{
                     ->limit(1)
                     ->get()
                     ->result();
+  }
+
+  public function getRanking(){
+    $this->load->database();
+    return $this->db->select('*')
+                  ->from('equipe')
+                  ->order_by('point', 'DESC')
+                  ->get()
+                  ->result();
   }
 
 
@@ -76,6 +94,19 @@ class Team_model extends CI_Model{
                       ->set('ville_equipe', $data['ville_equipe'])
                       ->set('code_p_equipe', $data['code_p_equipe'])
                       ->set('stade_equipe', $data['stade_equipe'])
+                      ->where('id_equipe', (int)$id)
+                      ->update($this->table);
+    }
+
+    public function update_stat($id, $data){
+      $this->load->database();
+      return $this->db->set('but_marque', $data['but_marque'])
+                      ->set('but_encaisse', $data['but_encaisse'])
+                      ->set('difference_but', $data['difference_but'])
+                      ->set('nb_victoire', $data['nb_victoire'])
+                      ->set('nb_defaite', $data['nb_defaite'])
+                      ->set('nb_nul', $data['nb_nul'])
+                      ->set('point', $data['point'])
                       ->where('id_equipe', (int)$id)
                       ->update($this->table);
     }
